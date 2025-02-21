@@ -8,5 +8,6 @@ test('Input fields should display as the data that was filled', async ({ loginPa
 
   expect(await loginPage.getUsername()).toBe('testuser');
   expect(await loginPage.getPassword()).toBe('password');
+  expect(await loginPage.getPassword()).toBe('password');
 });
 
