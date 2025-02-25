@@ -1,4 +1,4 @@
-export class CouplePage {
+export class CouponPage {
 
 
     /**
@@ -18,16 +18,15 @@ export class CouplePage {
         this.locatorFirst = page.getByRole('textbox', { name: 'MM/DD/YYYY' }).first();
         this.locatorNth = page.getByRole('textbox', { name: 'MM/DD/YYYY' }).nth(1);
         this.locaterDetail = page.getByRole('textbox', { name: 'รายละเอียด:' });
-        this.locaterCreate = page.getByRole('button', { name: 'เพิ่ม' })
+        this.locaterCreate = page.getByRole('button', { name: 'เพิ่ม' });
 
     }
     async goto() {
         await this.page.goto(this.baseUrl);
     }
-    async clickCreate() {
+    async clickButtonCreate() {
         await this.locatorButtonCreate.click();
     }
-
     async fillName(namepro) {
         await this.page.getByRole('textbox', { name: 'ชื่อคูปอง:' }).fill(namepro);
     }
@@ -46,15 +45,17 @@ export class CouplePage {
     async clickSent() {
         await this.page.locator('label', { hasText: 'Tags:' }).locator('button').click();
     }
-    async clickFirst() {
-        await this.page.getByRole('button', { name: 'Choose date' }).first().click();
-        await this.page.getByRole('gridcell', { name: '25' }).click();
+    async clickFirst(startDate) {
+        await this.locatorFirst.fill(startDate);
     }
-    // async clickNth() {
-    //     await this.page.getByRole('button', { name: 'Choose date', exact: true }).nth(1).click();
-    //     await this.page.getByRole('gridcell', { name: '27' }).click();
-    // }
-    async fillDetail(detail) {
+    async clickNth(endDate) {
+        await this.locatorNth.fill(endDate);
+        
+    }
+    async fillDetail() {
         await this.page.getByRole('textbox', { name: 'รายละเอียด:' });
+    }
+    async clickCreate(){
+        await this.page.getByRole('button', { name: 'เพิ่ม' });
     }
 }
