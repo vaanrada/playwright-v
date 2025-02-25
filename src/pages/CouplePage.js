@@ -29,6 +29,7 @@ export class CouplePage {
         //await this.page.getByRole('textbox', { name: 'Password' }).fill(password);
 
     //}
+    
     async clickCreate() {
         await this.locatorButtonLogin.click();
     }
