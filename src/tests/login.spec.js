@@ -1,5 +1,5 @@
 import { expect, test } from "@playwright/test";
-import { LoginPage } from "../pages/login.page.js";
+import { LoginPage } from "../pages/LoginPage.js";
 //const LoginPage = require("../pages/login.page.js");
 
 
@@ -40,3 +40,7 @@ test.describe("หน้าล็อกอิน", () => {
 
 
 })
+
+
+
+
