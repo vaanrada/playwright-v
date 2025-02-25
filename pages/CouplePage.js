@@ -55,7 +55,7 @@ export class CouplePage {
     //     await this.page.getByRole('button', { name: 'Choose date', exact: true }).nth(1).click();
     //     await this.page.getByRole('gridcell', { name: '27' }).click();
     // }
-    // async fillDetail(detail) {
-    //     await this.page.getByRole('textbox', { name: 'รายละเอียด:' });
-    // }
+    async fillDetail(detail) {
+        await this.page.getByRole('textbox', { name: 'รายละเอียด:' });
+    }
 } 
