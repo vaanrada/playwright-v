@@ -17,8 +17,8 @@ export class LoginPage {
         await this.page.goto(this.baseUrl);
     }
     async fillUserPassword(username, password) {
-        await this.page.getByRole('textbox', { name: 'Username' }).fill(username);
-        await this.page.getByRole('textbox', { name: 'Password' }).fill(password);
+        await this.locatorUsername.fill(username);
+        await this.locatorPassword.fill(password);
 
     }
     async clickLogin() {
