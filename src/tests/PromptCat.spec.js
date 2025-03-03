@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test";
 import { LoginPage } from "../pages/LoginPage.js";
 import { PromptCatPage, PromptPage } from "../pages/PromptCatPage.js";
 
-test.describe("หน้า Prompt Library Category", () => {
+test.describe("สร้าง Prompt Library Category", () => {
     test.beforeEach(async ({ page }) => {
        const loginPage = new LoginPage(page);
        await loginPage.goto();

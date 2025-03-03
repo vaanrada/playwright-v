@@ -4,7 +4,7 @@ import { CouponPage } from "../pages/CouponPage.js";
 //const LoginPage = require("../pages/login.page.js");
 
 
-test.describe("หน้าคูปอง", () => {
+test.describe("สร้างคูปอง", () => {
   test.beforeEach(async ({ page }) => {
     const loginPage = new LoginPage(page);
     await loginPage.goto();

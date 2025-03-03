@@ -4,7 +4,7 @@ import { PromptPage } from "../pages/PromptPage.js";
 //const LoginPage = require("../pages/login.page.js");
 
 
-test.describe("หน้า Prompt Library", () => {
+test.describe("สร้าง Prompt Library", () => {
     test.beforeEach(async ({ page }) => {
        const loginPage = new LoginPage(page);
        await loginPage.goto();
@@ -27,8 +27,8 @@ test.describe("หน้า Prompt Library", () => {
        await locator.fill('ดอกไม้ประจำวัน [Day]');
        await promptPage.uploadImage();
        await promptPage.clickButtonSave();
-       await page.waitForLoadState("networkidle"); 
-       //await page.getByRole('dialog', { name: 'สำเร็จ' }).waitForElementState("visible");
+      //  await page.waitForLoadState("networkidle"); 
+      //  await page.getByRole('dialog', { name: 'สำเร็จ' }).waitForElementState("visible");
     });
     test('กรณีไม่เลือกหมวดหมู่', async ({ page }) => {
       const promptPage = new PromptPage(page);
