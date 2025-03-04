@@ -1,4 +1,4 @@
-export class AiModelPage {
+export class HumanizeTextPage {
 
 
     /**
@@ -7,12 +7,11 @@ export class AiModelPage {
      */
     constructor(page) {
         this.page = page;
-        this.baseUrl = 'https://admin-staging.anissa.ai/chat-ai-model/';
+        this.baseUrl = 'https://admin-staging.anissa.ai/humanize-text/';
 
-        this.locatorButtonCreate = page.getByRole('button', { name: 'เพิ่ม Model' });
-        
-        this.locatorName = page.locator('#name');
-        this.locatoruploadImage = page.locator('input[type="file"]');
+        this.locatorButtonCreate = page.getByRole('button', { name: 'เพิ่ม Humanize text' });
+        this.locatorName = page.getByRole('textbox', { name: 'กรอกชื่อ Humanize text' })
+        this.locatorValue = page.getByRole('textbox', { name: 'กรอกค่า' });
         this.locatorButtonSave = page.getByRole('button', { name: 'บันทึก' });
     }
     async goto() {
@@ -24,10 +23,10 @@ export class AiModelPage {
     async fillName(name) {
         await this.locatorName.fill(name);
     }
-    async uploadImage() {
-        await this.locatoruploadImage.setInputFiles('./10-1.jpg');
+    async fillValue(value) {
+        await this.locatorValue.fill(value);
     }
-    async clickSave() {
+    async clickButtonSave() {
         await this.locatorButtonSave.click();
     }
 }

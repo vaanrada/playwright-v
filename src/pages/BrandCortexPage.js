@@ -10,6 +10,7 @@ export class BrandCortexPage {
         this.baseUrl = 'https://admin-staging.anissa.ai/master/brand-cortex/';
 
         this.locatorButtonCreate = page.getByRole('button', { name: 'create brand' });
+        this.locatorButtonEdit = page.getByRole('button', { name: 'แก้ไข' }).first()
         this.locatorAttribute = page.getByRole('button', { name: 'เพิ่ม Attribute' });
         this.locatorAttributeName = page.getByRole('textbox', { name: 'Attribute name' });
         this.locatorDescription = page.getByRole('textbox', { name: 'Description' });
@@ -22,6 +23,9 @@ export class BrandCortexPage {
     }
     async clickCreate() {
         await this.locatorButtonCreate.click();
+    }
+    async clickEdit() {
+        await this.locatorButtonEdit.click();
     }
     async clickAttribute() {
         await this.locatorAttribute.click();

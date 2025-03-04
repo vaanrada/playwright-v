@@ -9,6 +9,9 @@ export class MasterTagPage {
         this.page = page;
         this.baseUrl = 'https://admin-staging.anissa.ai/master/tag/';
         this.locatorButtonCreate = page.getByRole('button', { name: 'create tag' });
+        this.locatorButtonEdit = page.getByRole('button', { name: 'แก้ไข' }).first();
+        this.locatorEditName = page.getByRole('textbox', { name: 'กรอกชื่อ Master Tag' });
+        this.locatorEditDescription = page.getByRole('textbox', { name: 'กรอกรายละเอียด Master Tag' });
         this.locatorName = page.locator('input[name="name"]');
         this.locatorDescription = page.locator('textarea[name="description"]');
         this.locatorButtonSave = page.getByRole('button', { name: 'บันทึก' });
@@ -19,6 +22,9 @@ export class MasterTagPage {
     async clickCreate() {
         await this.locatorButtonCreate.click();
     }
+    async clickEdit() {
+        await this.locatorButtonEdit.click();
+    }
     async fillName(name) {
         await this.locatorName.fill(name);
     }
@@ -27,5 +33,11 @@ export class MasterTagPage {
     }
     async clickButtonSave() {
         await this.locatorButtonSave.click();
+    }
+    async fillEditName(editname) {
+        await this.locatorEditName.fill(editname)
+    }
+    async fillEditDescription(editdescription) {
+        await this.locatorEditDescription.fill(editdescription);
     }
 }

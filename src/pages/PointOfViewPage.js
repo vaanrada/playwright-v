@@ -1,4 +1,4 @@
-export class ToneOfVoicePage {
+export class PointOfViewPage {
 
 
     /**
@@ -7,10 +7,10 @@ export class ToneOfVoicePage {
      */
     constructor(page) {
         this.page = page;
-        this.baseUrl = 'https://admin-staging.anissa.ai/tone-of-voice/';
+        this.baseUrl = 'https://admin-staging.anissa.ai/point-of-view/';
 
-        this.locatorButtonCreate = page.getByRole('button', { name: 'เพิ่ม Tone of voice' });
-        this.locatorName = page.getByRole('textbox', { name: 'กรอกชื่อโทนเสียง' });
+        this.locatorButtonCreate = page.getByRole('button', { name: 'เพิ่ม Point of view' });
+        this.locatorName = page.getByRole('textbox', { name: 'กรอกชื่อมุมมอง' });
         this.locatorValue = page.getByRole('textbox', { name: 'กรอกค่า' });
         this.locatorButtonSave = page.getByRole('button', { name: 'บันทึก' });
     }

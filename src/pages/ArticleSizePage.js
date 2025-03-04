@@ -1,4 +1,4 @@
-export class ToneOfVoicePage {
+export class ArticleSizePage {
 
 
     /**
@@ -7,10 +7,11 @@ export class ToneOfVoicePage {
      */
     constructor(page) {
         this.page = page;
-        this.baseUrl = 'https://admin-staging.anissa.ai/tone-of-voice/';
+        this.baseUrl = 'https://admin-staging.anissa.ai/articles-size/';
 
-        this.locatorButtonCreate = page.getByRole('button', { name: 'เพิ่ม Tone of voice' });
-        this.locatorName = page.getByRole('textbox', { name: 'กรอกชื่อโทนเสียง' });
+        this.locatorButtonCreate = page.getByRole('button', { name: 'เพิ่ม Article size' });
+        this.locatorButtonEdit = page.getByRole('button', { name: 'แก้ไข' }).first();
+        this.locatorName = page.getByRole('textbox', { name: 'กรอกชื่อขนาด' });
         this.locatorValue = page.getByRole('textbox', { name: 'กรอกค่า' });
         this.locatorButtonSave = page.getByRole('button', { name: 'บันทึก' });
     }
@@ -28,5 +29,8 @@ export class ToneOfVoicePage {
     }
     async clickButtonSave() {
         await this.locatorButtonSave.click();
+    }
+    async clickEdit() {
+        await this.locatorButtonEdit.click();
     }
 }

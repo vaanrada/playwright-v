@@ -30,3 +30,24 @@ test.describe("สร้าง Master Tag", () => {
         await expect(page.getByText("กรุณากรอกชื่อ")).toBeVisible()
     });
 })
+test.describe("แก้ไข Master Tag", () => {
+    test.beforeEach(async ({ page }) => {
+        const loginPage = new LoginPage(page);
+        await loginPage.goto();
+        await loginPage.fillUserPassword('admintester', 'uwVjVE4ziK');
+        await loginPage.clickLogin();
+        await page.waitForLoadState("networkidle");
+    })
+    test('กรณีกรอกข้อมูลครบถ้วน', async ({ page }) => {
+        const mastertagpage = new MasterTagPage(page);
+        await mastertagpage.goto()
+        await mastertagpage.clickEdit();
+        await page.waitForLoadState("networkidle");
+        await mastertagpage.fillEditName("");
+        await mastertagpage.fillEditName("Nong v");
+        await mastertagpage.fillEditDescription("");
+        await mastertagpage.fillEditDescription("Test Description"); // คอยให้ element แสดง
+        await mastertagpage.clickButtonSave();
+        await expect(page.getByText("แก้ไขสำเร็จ")).toBeVisible()
+    });
+})
